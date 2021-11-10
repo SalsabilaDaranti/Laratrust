@@ -27,7 +27,7 @@ Route::get('tes-admin',function () {
     return view('layouts.admin');
 });
     //Admin Route
-    Route::group(['prefix'=>'admin','middleware'=>['auth']],
+    Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']],
 function () {
  Route::get('/',function (){
      return view('admin.index');
